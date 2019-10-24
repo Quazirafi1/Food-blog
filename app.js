@@ -2,6 +2,8 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var ejs = require('ejs');
+var expSession = require('express-session');
+var cookieParser = require('cookie-parser');
 var homepage = require('./controllers/homepage');
 var login = require('./controllers/login');
 //var register = require('./controllers/register');
@@ -15,6 +17,8 @@ app.set('view engine', 'ejs');
 
 //MIDDLEWARE
 app.use(bodyParser.urlencoded({extended:true}));
+app.use(expSession({secret:'my top secret value', saveUninitialized:true, resave: false}));
+app.use(cookieParser());
 app.use('/homepage', homepage);
 app.use('/login', login);
 app.use('/registration', registration);

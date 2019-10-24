@@ -15,21 +15,22 @@ module.exports = {
 				}
 			});
 	},
-	
+	*/
 	validate: function(user, callback){
 		console.log(user.username);
 		console.log(user.password);
-		var sql ="select * from users where username='"+user.username+"' and password='"+user.password+"'";
+		var sql ="select type from users where username='"+user.username+"' and password='"+user.password+"'";
+		
 		db.getResults(sql, function(result){
-
+			console.log(result[0].type);
 			if(result.length > 0){
-				callback(true);
+				callback(result[0].type);
 			}else{
-				callback(false);
+				callback(999);
 			}
 		});	
 	},
-	getAll: function(callback){
+	/*getAll: function(callback){
 		var sql = "SELECT id, username, password, name, phone FROM users,employee where users.id=employee.eid";
 		
 		db.getResults(sql, function(results){
