@@ -16,7 +16,10 @@ router.post('/', function(request, response){
 		console.log(status);
 		if(status==0){
 			response.cookie('username', request.body.username);
+			//console.log(getCookie(request.body.username))	;
+			console.log(request.cookies);
 			response.redirect('/admin/index');
+			//response.render('admin/index', {user: results});
 		}
 		else if(status==1){
 			response.cookie('username', request.body.username);

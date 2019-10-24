@@ -61,6 +61,7 @@ router.get('/see', function(request, response){
 			}
 		});	
 });
+*/
 
 router.get('/edit/:id', function(request, response){
 
@@ -69,7 +70,7 @@ router.get('/edit/:id', function(request, response){
 	});
 	
 });
-
+/*
 router.post('/edit/:id', function(request, response){
 
 	var user = {
@@ -100,7 +101,7 @@ router.post('/edit/:id', function(request, response){
 	});
 	
 });
-
+/*
 router.get('/delete/:id', function(request, response){
 
 	userModel.getById(request.params.id, function(result){
