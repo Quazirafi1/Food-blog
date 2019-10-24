@@ -4,6 +4,17 @@ var db2 = require('./db')
 var x;
 module.exports = {
 
+	get: function(id, callback){
+
+			var sql = "SELECT id, username, password, name, phone FROM users,employee where users.id="+id+" and users.id=employee.eid";
+			db.getResults(sql, function(result){
+				if(result.length > 0 ){
+					callback(result[0]);
+				}else{
+					callback([]);
+				}
+			});
+	},
 	getById: function(id, callback){
 			console.log("saxas");
 			console.log(id);
@@ -35,8 +46,8 @@ module.exports = {
 			}
 		});	
 	},
-	/*getAll: function(callback){
-		var sql = "SELECT id, username, password, name, phone FROM users,employee where users.id=employee.eid";
+	getAll: function(callback){
+		var sql = "SELECT id, username FROM users,employee where users.id=employee.eid";
 		
 		db.getResults(sql, function(results){
 			
@@ -46,7 +57,7 @@ module.exports = {
 				callback([]);
 			}
 		});	
-	},*/
+	},
 	insert: function(user, callback){
 		var v;
 		var sql ="insert into users values('', '"+ user.username+"', '"+user.password+"', '"+user.type+"')";
@@ -78,7 +89,7 @@ module.exports = {
 			callback(status);
 		});
 		
-	}/*,
+	},/*
 	update: function(user, callback){
 		var sql ="update users set username='"+ user.username+"', password='"+user.password+"' where id="+user.id;
 		
@@ -96,7 +107,7 @@ module.exports = {
 		db.execute(sql, function(status){
 			callback(status);
 		});
-	},
+	},*/
 	delete: function(user, callback){
 		var sql = "delete from users where id="+user.id;
 		db.execute(sql, function(status){
@@ -108,7 +119,7 @@ module.exports = {
 		db.execute(sql, function(status){
 			callback(status);
 		});
-	}*/
+	}
 }
 
 

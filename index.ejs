@@ -1,21 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Admin Home</title>
+	<title>Login page</title>
 </head>
 <body>
 
 <fieldset>
-	<legend>Admin Homepage</legend>
+	<legend>Homepage</legend>
+	<form method="post" >
 	<table>
-		<tr>
-		<td></td>
-		<td><a href="/admin/edit/<%= user.username %>">Edit Profile Information</a></td>
-		<td><a href="/admin/delete">Remove profile</a></td>
-		<td><a href="">Authorize</a></td>
-		<td><a href="">Add restaurant</a></td>
-		</tr>
+		<a href="/login">Login</a> |
+		<a href="/registration">Register</a>	
 	</table>
+	</form>
 </fieldset>
 </body>
 </html>
