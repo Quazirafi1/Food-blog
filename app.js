@@ -3,18 +3,18 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var ejs = require('ejs');
 var homepage = require('./controllers/homepage');
-var home = require('./controllers/home');
+var login = require('./controllers/login');
 var app = express();
 
 
-//CONFIGURATION
+	//CONFIGURATION
 app.set('view engine', 'ejs');
 
 
 //MIDDLEWARE
 app.use(bodyParser.urlencoded({extended:true}));
 app.use('/homepage', homepage);
-app.use('/home', home);
+app.use('/login', login);
 
 
 //ROUTER
