@@ -4,10 +4,15 @@ var db2 = require('./db')
 var x;
 module.exports = {
 
-	/*getById: function(id, callback){
-
-			var sql = "SELECT id, username, password, name, phone FROM users,employee where users.id="+id+" and users.id=employee.eid";
+	getById: function(id, callback){
+			console.log("saxas");
+			console.log(id);
+			var sql = "SELECT id, username, password, name, phone FROM users,employee where users.username="+id+" and users.id=employee.eid";
+			console.log(sql);
 			db.getResults(sql, function(result){
+				//return(result[0]);
+				console.log("jaka");
+				//callback(result[0]);
 				if(result.length > 0 ){
 					callback(result[0]);
 				}else{
@@ -15,7 +20,7 @@ module.exports = {
 				}
 			});
 	},
-	*/
+	
 	validate: function(user, callback){
 		console.log(user.username);
 		console.log(user.password);
