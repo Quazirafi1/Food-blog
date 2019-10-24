@@ -8,9 +8,10 @@ router.get('/', function(request, response){
 	response.render("registration/index");
 });
 
-/*router.post('/register', function(request, response){
+router.post('/', function(request, response){
 
 	var user = {
+		type:request.body.type,
 		username: request.body.username,
 		password: request.body.password,
 		name: request.body.name,
@@ -31,26 +32,26 @@ router.get('/', function(request, response){
 					userModel.insert2(user, function(status){
 						if(status){
 							console.log("came if 3");
-							response.redirect('/employee/register');
+							response.redirect('/registration');
 						}
 						else
 						{
-							response.redirect('/employee/register');
+							response.redirect('/registration');
 						}
 					});
 				}
 				else
 				{
-					response.redirect('/employee/register');
+					response.redirect('/registration');
 				}
 			});
 		}else{
 			console.log("came else");
-			response.redirect('/employee/register');
+			response.redirect('/registration');
 		}
 	});
 	
-});*/
+});
 
 module.exports = router;
 

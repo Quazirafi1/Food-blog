@@ -5,7 +5,7 @@ var getConnection = function(callback){
 	  host     : 'localhost',
 	  user     : 'root',
 	  password : '',
-	  database : 'a1'
+	  database : 'exam'
 	});
 	 
 	connection.connect(function(err) {

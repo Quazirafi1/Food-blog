@@ -40,10 +40,10 @@ module.exports = {
 				callback([]);
 			}
 		});	
-	},
+	},*/
 	insert: function(user, callback){
 		var v;
-		var sql ="insert into users values('', '"+ user.username+"', '"+user.password+"')";
+		var sql ="insert into users values('', '"+ user.username+"', '"+user.password+"', '"+user.type+"')";
 		db1.execute(sql, function(status){
 			callback(status);
 		});
@@ -72,7 +72,7 @@ module.exports = {
 			callback(status);
 		});
 		
-	},
+	}/*,
 	update: function(user, callback){
 		var sql ="update users set username='"+ user.username+"', password='"+user.password+"' where id="+user.id;
 		
