@@ -15,15 +15,18 @@ router.post('/', function(request, response){
 	userModel.validate(user, function(status){
 		console.log(status);
 		if(status==0){
-			response.cookie('username', request.body.username);
+			response.cookie('username', request.body.uname);
 			//console.log(getCookie(request.body.username))	;
-			console.log(request.cookies);
-			response.redirect('/admin/index');
-			//response.render('admin/index', {user: results});
+			//console.log(request.cookie[request.body.uname]);
+			//console.log(request.body.uname);
+			//response.redirect('/admin/index');
+			var x= request.body.uname;
+			response.render('admin/index', {user});
 		}
 		else if(status==1){
 			response.cookie('username', request.body.username);
-			response.redirect('/member/index');
+			var x= request.body.uname;
+			response.render('admin/index', {user});
 		}
 		else{
 			response.send('invalid username/password');		

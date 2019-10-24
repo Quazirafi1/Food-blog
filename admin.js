@@ -66,7 +66,8 @@ router.get('/see', function(request, response){
 router.get('/edit/:id', function(request, response){
 
 	userModel.getById(request.params.id, function(result){
-		response.render('employee/edit', result);
+		console.log("cat");
+		response.render('admin/edit', result);
 	});
 	
 });
