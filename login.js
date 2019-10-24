@@ -16,11 +16,11 @@ router.post('/', function(request, response){
 		console.log(status);
 		if(status==0){
 			response.cookie('username', request.body.username);
-			response.redirect('/homepage');
+			response.redirect('/admin/index');
 		}
 		else if(status==1){
 			response.cookie('username', request.body.username);
-			response.redirect('/homepage');
+			response.redirect('/member/index');
 		}
 		else{
 			response.send('invalid username/password');		
